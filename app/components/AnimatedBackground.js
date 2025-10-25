@@ -9,10 +9,17 @@ export default function AnimatedBackground() {
 
   useEffect(() => {
     setMounted(true)
+    let ticking = false
     const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setMousePosition({ x: e.clientX, y: e.clientY })
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
@@ -31,7 +38,7 @@ export default function AnimatedBackground() {
           x: mousePosition.x - 200,
           y: mousePosition.y - 200,
         }}
-        transition={{ type: 'spring', damping: 30, stiffness: 200 }}
+        transition={{ type: 'spring', damping: 50, stiffness: 100 }}
       />
       
       <motion.div
@@ -44,11 +51,11 @@ export default function AnimatedBackground() {
           x: mousePosition.x * 0.5 - 100,
           y: mousePosition.y * 0.5 - 100,
         }}
-        transition={{ type: 'spring', damping: 40, stiffness: 150 }}
+        transition={{ type: 'spring', damping: 60, stiffness: 80 }}
       />
 
-      {/* Floating particles */}
-      {[...Array(20)].map((_, i) => (
+      {/* Floating particles - reduced count for performance */}
+      {[...Array(8)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-40"

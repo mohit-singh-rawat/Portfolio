@@ -7,6 +7,7 @@ import BlurReveal from './BlurReveal'
 import ShapeBlur from './ShapeBlur'
 import MagneticButton from './MagneticButton'
 import GradualBlur from './GradualBlur'
+import Toast from './Toast'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,16 +16,35 @@ export default function Contact() {
     message: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [toast, setToast] = useState({ show: false, message: '', type: '' })
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+      
+      const result = await response.json()
+      
+      if (result.success) {
+        setFormData({ name: '', email: '', message: '' })
+        setToast({ show: true, message: result.message, type: 'success' })
+      } else {
+        setToast({ show: true, message: result.message, type: 'error' })
+      }
+    } catch (error) {
+      console.error('Error:', error)
+      setToast({ show: true, message: 'Network error. Please try again.', type: 'error' })
+    }
     
-    setFormData({ name: '', email: '', message: '' })
     setIsSubmitting(false)
-    alert('Message sent successfully!')
   }
 
   const handleChange = (e) => {
@@ -39,7 +59,7 @@ export default function Contact() {
       icon: <Mail className="w-6 h-6" />,
       title: 'Email',
       value: 'rawat.mohitsingh7455@gmail.com',
-      link: 'mailto:rawat.mohitsingh7455@gmail.com'
+      link: 'mailto:rawat.mohitsingh7455@gmail.com?subject=Portfolio Contact&body=Hi Mohit, I would like to get in touch with you.'
     },
     {
       icon: <Phone className="w-6 h-6" />,
@@ -193,6 +213,13 @@ export default function Contact() {
         strength={2}
         divCount={5}
         opacity={0.6}
+      />
+      
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        isVisible={toast.show}
+        onClose={() => setToast({ ...toast, show: false })}
       />
     </section>
   )

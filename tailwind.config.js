@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'class',
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     extend: {
       colors: {
@@ -25,6 +26,7 @@ module.exports = {
         'gradient': 'gradient 8s linear infinite',
         'float': 'float 6s ease-in-out infinite',
         'glow': 'glow 2s ease-in-out infinite alternate',
+        'spin': 'spin 1s linear infinite',
       },
       keyframes: {
         gradient: {
@@ -44,6 +46,10 @@ module.exports = {
         glow: {
           '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)' },
           '100%': { boxShadow: '0 0 30px rgba(59, 130, 246, 0.8)' }
+        },
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' }
         }
       }
     },

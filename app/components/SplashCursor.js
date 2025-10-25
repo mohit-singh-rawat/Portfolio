@@ -4,13 +4,13 @@ import { useEffect, useRef } from 'react'
 import { useTheme } from './ThemeProvider'
 
 function SplashCursor({
-  SIM_RESOLUTION = 128,
-  DYE_RESOLUTION = 1440,
-  CAPTURE_RESOLUTION = 512,
+  SIM_RESOLUTION = 64,
+  DYE_RESOLUTION = 512,
+  CAPTURE_RESOLUTION = 256,
   DENSITY_DISSIPATION = 3.5,
   VELOCITY_DISSIPATION = 2,
   PRESSURE = 0.1,
-  PRESSURE_ITERATIONS = 20,
+  PRESSURE_ITERATIONS = 10,
   CURL = 3,
   SPLAT_RADIUS = 0.2,
   SPLAT_FORCE = 6000,
@@ -721,15 +721,22 @@ function SplashCursor({
       return hash
     }
 
+    let ticking = false
     const handleMouseMove = (e) => {
-      let pointer = pointers[0]
-      let posX = scaleByPixelRatio(e.clientX)
-      let posY = scaleByPixelRatio(e.clientY)
-      let color = generateColor()
-      updatePointerMoveData(pointer, posX, posY, color)
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          let pointer = pointers[0]
+          let posX = scaleByPixelRatio(e.clientX)
+          let posY = scaleByPixelRatio(e.clientY)
+          let color = generateColor()
+          updatePointerMoveData(pointer, posX, posY, color)
+          ticking = false
+        })
+        ticking = true
+      }
     }
 
-    document.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('mousemove', handleMouseMove, { passive: true })
     updateFrame()
 
     return () => {

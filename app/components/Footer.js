@@ -24,7 +24,7 @@ export default function Footer() {
     {
       name: 'Email',
       icon: <Mail size={20} />,
-      url: 'mailto:rawat.mohitsingh7455@gmail.com',
+      url: 'mailto:rawat.mohitsingh7455@gmail.com?subject=Portfolio Contact&body=Hi Mohit, I would like to get in touch with you.',
       color: 'hover:text-red-500'
     }
   ]

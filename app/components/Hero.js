@@ -8,7 +8,7 @@ import AnimatedBackground from './AnimatedBackground'
 import HyperSpeedText from './HyperSpeedText'
 import BlurReveal from './BlurReveal'
 import MagneticButton from './MagneticButton'
-import GradualBlur from './GradualBlur';
+import GradualBlur from './GradualBlur'
 // Image imports removed - using direct paths
 
 export default function Hero() {
@@ -44,6 +44,8 @@ export default function Hero() {
                   height={400}
                   className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover object-center rounded-full shadow-2xl border-4 border-purple-500/50 group-hover:border-cyan-400/70 transition-all duration-500"
                   priority
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
               </motion.div>
             </motion.div>
@@ -83,13 +85,13 @@ export default function Hero() {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-8 sm:mb-12 px-4 sm:px-0">
                 <MagneticButton
                   className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 animate-glow text-sm sm:text-base"
-                  onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   Hire Me
                 </MagneticButton>
                 <MagneticButton
                   className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full font-semibold hover:bg-gray-100 dark:hover:bg-dark-100 transition-all duration-300 text-sm sm:text-base"
-                  onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   View Projects
                 </MagneticButton>
@@ -108,7 +110,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="p-2 sm:p-3 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
               >
-                <Github size={20} className="sm:w-6 sm:h-6" />
+                <Github size={20} className="sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300" />
               </a>
               <a
                 href="https://www.linkedin.com/in/mohit-singh-rawat-2a1112299/"
@@ -116,13 +118,13 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="p-2 sm:p-3 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
               >
-                <Linkedin size={20} className="sm:w-6 sm:h-6" />
+                <Linkedin size={20} className="sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300" />
               </a>
               <a
-                href="mailto:rawat.mohitsingh7455@gmail.com"
+                href="mailto:rawat.mohitsingh7455@gmail.com?subject=Portfolio Contact&body=Hi Mohit, I would like to get in touch with you."
                 className="p-2 sm:p-3 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
               >
-                <Mail size={20} className="sm:w-6 sm:h-6" />
+                <Mail size={20} className="sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300" />
               </a>
             </motion.div>
           </motion.div>
@@ -150,6 +152,8 @@ export default function Hero() {
                   height={400}
                   className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover object-center rounded-full shadow-2xl border-4 border-blue-500/50 group-hover:border-purple-400/70 transition-all duration-500"
                   priority
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
               </motion.div>
             </motion.div>
