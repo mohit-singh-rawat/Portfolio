@@ -1,0 +1,27 @@
+{
+  "name": "mohit-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 6684",
+    "build": "next build",
+    "start": "next start -p 6684",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "emailjs-com": "^3.2.0",
+    "framer-motion": "^10.16.16",
+    "lucide-react": "^0.294.0",
+    "next": "14.0.4",
+    "ogl": "^1.0.11",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0"
+  }
+}
