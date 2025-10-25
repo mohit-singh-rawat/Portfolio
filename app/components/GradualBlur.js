@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState, useMemo } from 'react'
-import './GradualBlur.css'
+import '../styles/GradualBlur.css'
 
 const GradualBlur = ({ 
   position = 'bottom', 

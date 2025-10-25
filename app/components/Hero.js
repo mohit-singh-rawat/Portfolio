@@ -15,11 +15,11 @@ export default function Hero() {
   const { theme } = useTheme()
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6">
       <AnimatedBackground />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-6 items-center">
+      <div className="container mx-auto relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           
           {/* Left Side - Dark Mode Image */}
           {theme === 'dark' && (
@@ -27,7 +27,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: -100, scale: 0.8 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 1, delay: 0.3, type: "spring", stiffness: 100 }}
-              className="order-2 lg:order-1 flex justify-center lg:justify-start"
+              className="order-2 lg:order-1 flex justify-center lg:justify-start mb-8 lg:mb-0"
             >
               <motion.div
                 whileHover={{ 
@@ -42,7 +42,7 @@ export default function Hero() {
                   alt="Mohit Singh Rawat"
                   width={400}
                   height={400}
-                  className="w-80 h-80 object-cover object-center rounded-full shadow-2xl border-4 border-purple-500/50 group-hover:border-cyan-400/70 transition-all duration-500"
+                  className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover object-center rounded-full shadow-2xl border-4 border-purple-500/50 group-hover:border-cyan-400/70 transition-all duration-500"
                   priority
                 />
               </motion.div>
@@ -57,7 +57,7 @@ export default function Hero() {
             className={`text-center lg:text-left order-1 ${theme === 'light' ? 'lg:order-1' : 'lg:order-2'}`}
           >
             <BlurReveal delay={0.2}>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6">
                 <span className="text-gray-900 dark:text-white">Hi, I'm </span>
                 <HyperSpeedText 
                   text="Mohit Singh Rawat" 
@@ -67,28 +67,28 @@ export default function Hero() {
             </BlurReveal>
 
             <BlurReveal delay={0.4}>
-              <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-4 font-medium">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 font-medium">
                 Frontend Developer & React Specialist
               </p>
             </BlurReveal>
 
             <BlurReveal delay={0.6}>
-              <p className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-500 dark:text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2 sm:px-0">
                 Passionate about crafting beautiful user interfaces and interactive web experiences. 
                 I specialize in React, Next.js, and modern frontend technologies to bring designs to life.
               </p>
             </BlurReveal>
 
             <BlurReveal delay={0.8}>
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-8 sm:mb-12 px-4 sm:px-0">
                 <MagneticButton
-                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 animate-glow"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 animate-glow text-sm sm:text-base"
                   onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
                 >
                   Hire Me
                 </MagneticButton>
                 <MagneticButton
-                  className="px-8 py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full font-semibold hover:bg-gray-100 dark:hover:bg-dark-100 transition-all duration-300"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full font-semibold hover:bg-gray-100 dark:hover:bg-dark-100 transition-all duration-300 text-sm sm:text-base"
                   onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
                 >
                   View Projects
@@ -100,29 +100,29 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1, duration: 0.8 }}
-              className="flex items-center justify-center lg:justify-start space-x-6 mb-12"
+              className="flex items-center justify-center lg:justify-start space-x-4 sm:space-x-6 mb-8 sm:mb-12"
             >
               <a
                 href="https://github.com/mohit-singh-rawat"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+                className="p-2 sm:p-3 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
               >
-                <Github size={24} />
+                <Github size={20} className="sm:w-6 sm:h-6" />
               </a>
               <a
                 href="https://www.linkedin.com/in/mohit-singh-rawat-2a1112299/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+                className="p-2 sm:p-3 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
               >
-                <Linkedin size={24} />
+                <Linkedin size={20} className="sm:w-6 sm:h-6" />
               </a>
               <a
                 href="mailto:rawat.mohitsingh7455@gmail.com"
-                className="p-3 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+                className="p-2 sm:p-3 bg-gray-100 dark:bg-dark-100 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
               >
-                <Mail size={24} />
+                <Mail size={20} className="sm:w-6 sm:h-6" />
               </a>
             </motion.div>
           </motion.div>
@@ -133,7 +133,7 @@ export default function Hero() {
               initial={{ opacity: 0, x: 100, scale: 0.8 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 1, delay: 0.3, type: "spring", stiffness: 100 }}
-              className="order-2 lg:order-2 flex justify-center lg:justify-end"
+              className="order-2 lg:order-2 flex justify-center lg:justify-end mb-8 lg:mb-0"
             >
               <motion.div
                 whileHover={{ 
@@ -148,7 +148,7 @@ export default function Hero() {
                   alt="Mohit Singh Rawat"
                   width={400}
                   height={400}
-                  className="w-80 h-80 object-cover object-center rounded-full shadow-2xl border-4 border-blue-500/50 group-hover:border-purple-400/70 transition-all duration-500"
+                  className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover object-center rounded-full shadow-2xl border-4 border-blue-500/50 group-hover:border-purple-400/70 transition-all duration-500"
                   priority
                 />
               </motion.div>
@@ -161,9 +161,9 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-50"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-50"
       >
-        <ArrowDown className="animate-bounce text-gray-400" size={32} />
+        <ArrowDown className="animate-bounce text-gray-400" size={24} />
       </motion.div>
       
       <GradualBlur

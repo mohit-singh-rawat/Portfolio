@@ -49,22 +49,22 @@ export default function Footer() {
         />
       </div>
       
-      <div className="container mx-auto px-6 py-12 relative z-10">
-        <div className="grid md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 relative z-10">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold gradient-text mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold gradient-text mb-3 sm:mb-4">
               Mohit Singh Rawat
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
               Frontend Developer passionate about creating beautiful web interfaces 
               and bringing ideas to life through code.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3 sm:space-x-4">
               {socialLinks.map((link, index) => (
                 <motion.a
                   key={index}
@@ -138,15 +138,15 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
-          className="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8"
+          className="border-t border-gray-200 dark:border-gray-700 mt-8 sm:mt-12 pt-6 sm:pt-8"
         >
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 md:mb-0">
+            <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm mb-3 md:mb-0 text-center md:text-left">
               © {new Date().getFullYear()} Mohit Singh Rawat. All rights reserved.
             </p>
-            <div className="flex items-center text-gray-600 dark:text-gray-300 text-sm">
+            <div className="flex items-center justify-center md:justify-end text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
               <span>Made with</span>
-              <Heart className="w-4 h-4 mx-1 text-red-500 fill-current" />
+              <Heart className="w-3 h-3 sm:w-4 sm:h-4 mx-1 text-red-500 fill-current" />
               <span>using Next.js & Tailwind CSS</span>
             </div>
           </div>
