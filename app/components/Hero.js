@@ -146,7 +146,7 @@ export default function Hero() {
                 className="relative group"
               >
                 <Image
-                  src="/assets/images/Mohit Portfolio photo.jpeg"
+                  src="/assets/images/next_js_over_react_9a108d6bfc.png"
                   alt="Mohit Singh Rawat"
                   width={400}
                   height={400}
