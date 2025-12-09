@@ -15,7 +15,7 @@ export default function Hero() {
   const { theme } = useTheme()
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 pt-20">
       <AnimatedBackground />
 
       <div className="container mx-auto relative z-10">

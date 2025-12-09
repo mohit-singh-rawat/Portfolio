@@ -20,8 +20,8 @@ export default function Projects() {
       longDescription: 'Built a complete healthcare management system with patient records, billing automation, and compliance features. Implemented HIPAA-compliant data handling, HL7 FHIR integration, and comprehensive reporting dashboards for healthcare providers.',
       image: 'https://images.unsplash.com/photo-1638202993928-7267aad84c31?w=600&h=400&fit=crop',
       tech: ['React', 'Node.js', 'MongoDB', 'Express', 'HIPAA Compliance', 'HL7 FHIR', 'Healthcare APIs'],
-      liveUrl: '#',
-      githubUrl: '#'
+      liveUrl: 'https://clinic.probillrcm.com',
+      githubUrl: 'https://github.com/code-rowthtech/RCM-PRO-BILL-CLINIC.git'
     },
     {
       id: 2,
@@ -50,8 +50,8 @@ export default function Projects() {
       longDescription: 'Designed and developed the official RowthTech company website featuring service showcases, portfolio displays, and corporate information. Implemented modern UI/UX principles with smooth animations and responsive design.',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
       tech: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'SEO'],
-      liveUrl: '#',
-      githubUrl: '#'
+      liveUrl: 'https://rowthtech.com/',
+      githubUrl: 'https://github.com/code-rowthtech/rowthtech_react.git'
     },
     {
       id: 5,
@@ -60,8 +60,8 @@ export default function Projects() {
       longDescription: 'Developed a sophisticated cybersecurity platform for risk assessment and threat analysis. Features include vulnerability scanning, compliance reporting, and real-time security monitoring with advanced analytics dashboards.',
       image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop',
       tech: ['React', 'Node.js', 'Security APIs', 'Analytics', 'Dashboard', 'MongoDB'],
-      liveUrl: '#',
-      githubUrl: '#'
+      liveUrl: 'https://riskreport.almata.co.jp',
+      githubUrl: ''
     },
     {
       id: 6,
@@ -70,8 +70,8 @@ export default function Projects() {
       longDescription: 'Built a complete business management solution featuring accounting modules, automated invoicing, financial reporting, and workflow management. Integrated payment gateways and implemented role-based access control.',
       image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop',
       tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Payment APIs', 'PDF Generation'],
-      liveUrl: '#',
-      githubUrl: '#'
+      liveUrl: 'https://accountpro.co.in',
+      githubUrl: 'https://github.com/code-rowthtech/ACCOUNT-PRO-WEBSITE.git'
     },
     {
       id: 7,
@@ -80,8 +80,8 @@ export default function Projects() {
       longDescription: 'Created a specialized auction platform for industrial machinery and heavy equipment. Features real-time bidding, equipment cataloging, bid management, and secure payment processing for high-value transactions.',
       image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
       tech: ['React', 'WebSockets', 'Node.js', 'Real-time Bidding', 'Payment Gateway', 'MongoDB'],
-      liveUrl: '#',
-      githubUrl: '#'
+      liveUrl: 'http://103.185.212.117:5005/bmg/home',
+      githubUrl: 'https://github.com/code-rowthtech/BMG-AUCTION-BUYER.git'
     },
     {
       id: 8,
@@ -100,8 +100,8 @@ export default function Projects() {
       longDescription: 'Built a comprehensive team management solution featuring project tracking, task assignment, progress monitoring, and team collaboration tools. Includes time tracking, reporting dashboards, and automated workflow management.',
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
       tech: ['React', 'Node.js', 'WebSockets', 'Project Management', 'Real-time Collaboration', 'Analytics'],
-      liveUrl: '#',
-      githubUrl: '#'
+      liveUrl: 'https://taskmanagerteam.rowthtech.com',
+      githubUrl: 'https://github.com/negi1307/Task-Management.git'
     }
   ]
 
