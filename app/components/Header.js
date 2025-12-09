@@ -4,11 +4,14 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Moon, Sun, Menu, X } from 'lucide-react'
 import { useTheme } from './ThemeProvider'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { theme, setTheme } = useTheme()
+  const pathname = usePathname()
 
   useEffect(() => {
     let ticking = false
@@ -26,10 +29,14 @@ export default function Header() {
   }, [])
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/', type: 'link' },
+    { name: 'About', href: '#about', type: 'scroll' },
+    { name: 'Experience', href: '#experience', type: 'scroll' },
+    { name: 'Projects', href: '#projects', type: 'scroll' },
+    { name: 'Certifications', href: '#certifications', type: 'scroll' },
+    { name: 'Testimonials', href: '#testimonials', type: 'scroll' },
+    { name: 'Blog', href: '/blog', type: 'link' },
+    { name: 'Contact', href: '#contact', type: 'scroll' },
   ]
   return (
     <motion.header
@@ -43,23 +50,45 @@ export default function Header() {
     >
       <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="text-xl sm:text-2xl font-bold gradient-text"
-          >
-            MSR
-          </motion.div>
+          <Link href="/">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-xl sm:text-2xl font-bold gradient-text cursor-pointer"
+            >
+              MSR
+            </motion.div>
+          </Link>
 
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' })}
-                className="text-sm lg:text-base text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
-              >
-                {item.name}
-              </button>
+              item.type === 'link' ? (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`text-sm lg:text-base transition-colors duration-200 ${
+                    pathname === item.href 
+                      ? 'text-blue-600 dark:text-blue-400 font-medium'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <button
+                  key={item.name}
+                  onClick={() => {
+                    if (pathname !== '/') {
+                      window.location.href = '/' + item.href
+                    } else {
+                      document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  }}
+                  className="text-sm lg:text-base text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
+                >
+                  {item.name}
+                </button>
+              )
             ))}
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -92,16 +121,35 @@ export default function Header() {
             className="md:hidden mt-3 sm:mt-4 py-3 sm:py-4 bg-white dark:bg-dark-200 rounded-lg shadow-lg mx-2 sm:mx-0"
           >
             {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => {
-                  setIsMobileMenuOpen(false)
-                  document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' })
-                }}
-                className="block w-full text-left px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-100"
-              >
-                {item.name}
-              </button>
+              item.type === 'link' ? (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block w-full text-left px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base hover:bg-gray-100 dark:hover:bg-dark-100 ${
+                    pathname === item.href 
+                      ? 'text-blue-600 dark:text-blue-400 font-medium'
+                      : 'text-gray-700 dark:text-gray-300'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <button
+                  key={item.name}
+                  onClick={() => {
+                    setIsMobileMenuOpen(false)
+                    if (pathname !== '/') {
+                      window.location.href = '/' + item.href
+                    } else {
+                      document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' })
+                    }
+                  }}
+                  className="block w-full text-left px-3 sm:px-4 py-2 sm:py-2.5 text-sm sm:text-base text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-100"
+                >
+                  {item.name}
+                </button>
+              )
             ))}
           </motion.div>
         )}
