@@ -446,7 +446,7 @@ export default function Certifications() {
                       {cert.issuer}
                     </p>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
-                      {cert.date} • {cert.hours}
+                      {cert.date} | {cert.hours}
                     </p>
                   </div>
                   <motion.div
@@ -473,7 +473,14 @@ export default function Certifications() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: idx * 0.1 }}
                       whileHover={{ scale: 1.1, y: -2 }}
-                      className={`px-3 py-1 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium border border-gray-200/50 dark:border-gray-600/50 hover:bg-gradient-to-r hover:${cert.color} hover:text-white transition-all duration-300`}
+                      className={`px-3 py-1 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium border border-gray-200/50 dark:border-gray-600/50 hover:text-white transition-all duration-300 ${
+                        cert.color === 'from-blue-500 to-cyan-500' ? 'hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500' :
+                        cert.color === 'from-green-500 to-emerald-500' ? 'hover:bg-gradient-to-r hover:from-green-500 hover:to-emerald-500' :
+                        cert.color === 'from-purple-500 to-pink-500' ? 'hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500' :
+                        cert.color === 'from-orange-500 to-red-500' ? 'hover:bg-gradient-to-r hover:from-orange-500 hover:to-red-500' :
+                        cert.color === 'from-indigo-500 to-purple-500' ? 'hover:bg-gradient-to-r hover:from-indigo-500 hover:to-purple-500' :
+                        'hover:bg-gradient-to-r hover:from-blue-500 hover:to-purple-500'
+                      }`}
                     >
                       {skill}
                     </motion.span>
@@ -531,10 +538,22 @@ export default function Certifications() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <MagneticButton
-                onClick={() => window.open('/resume.pdf', '_blank')}
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/Mohit_Singh_Rawat_Resume_Updated.pdf';
+                  link.download = 'Mohit_Singh_Rawat_Resume_Updated.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
                 className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 flex items-center gap-3 relative overflow-hidden"
               >
                 <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
+                  initial={false}
+                />
+                <motion.div
+                  className="relative z-10"
                   animate={{
                     rotate: [0, 360]
                   }}
@@ -546,11 +565,7 @@ export default function Certifications() {
                 >
                   <Download className="w-5 h-5" />
                 </motion.div>
-                Download Resume
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  initial={false}
-                />
+                <span className="relative z-10">Download Resume</span>
               </MagneticButton>
               
               <MagneticButton

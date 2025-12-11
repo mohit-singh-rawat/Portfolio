@@ -1,0 +1,312 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+/F2 6 0 R
+/F3 7 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 4200
+>>
+stream
+BT
+/F2 26 Tf
+50 750 Td
+(MOHIT SINGH RAWAT) Tj
+0 -35 Td
+/F3 14 Tf
+0.2 0.4 0.8 rg
+(Frontend Developer | React & Next.js Specialist) Tj
+0 0 0 rg
+
+0 -25 Td
+/F1 11 Tf
+(Email: rawat.mohitsingh7455@gmail.com | Phone: +91-7455892904) Tj
+0 -15 Td
+(LinkedIn: linkedin.com/in/mohit-singh-rawat-2a1112299) Tj
+0 -15 Td
+(Portfolio: mohitsinghrawat.dev | GitHub: github.com/mohitsinghrawat) Tj
+
+0 -40 Td
+/F2 18 Tf
+0.1 0.1 0.1 rg
+(PROFESSIONAL SUMMARY) Tj
+0 0 0 rg
+0 -5 Td
+50 0 462 1 re f
+0 -20 Td
+/F1 11 Tf
+(Passionate Frontend Developer with 2+ years of hands-on experience in React.js and Next.js.) Tj
+0 -15 Td
+(Specialized in building responsive, user-friendly web applications with modern JavaScript) Tj
+0 -15 Td
+(frameworks. Proven track record of delivering high-quality code and optimizing application) Tj
+0 -15 Td
+(performance. Strong expertise in component-based architecture and state management.) Tj
+
+0 -35 Td
+/F2 18 Tf
+0.1 0.1 0.1 rg
+(TECHNICAL SKILLS) Tj
+0 0 0 rg
+0 -5 Td
+50 0 462 1 re f
+0 -20 Td
+/F2 12 Tf
+0.2 0.4 0.8 rg
+(Frontend Technologies:) Tj
+0 0 0 rg
+0 -15 Td
+/F1 11 Tf
+(- React.js, Next.js, JavaScript \(ES6+\), TypeScript, HTML5, CSS3) Tj
+0 -15 Td
+(- Tailwind CSS, Styled Components, SASS/SCSS, Bootstrap, Material-UI) Tj
+0 -15 Td
+(- Redux, Context API, Zustand, React Query/TanStack Query, Framer Motion) Tj
+
+0 -20 Td
+/F2 12 Tf
+0.2 0.4 0.8 rg
+(Development Tools & Platforms:) Tj
+0 0 0 rg
+0 -15 Td
+/F1 11 Tf
+(- Git, GitHub, VS Code, Webpack, Vite, npm/yarn, Docker) Tj
+0 -15 Td
+(- Figma, Adobe XD, Chrome DevTools, Postman, Vercel, Netlify) Tj
+
+0 -20 Td
+/F2 12 Tf
+0.2 0.4 0.8 rg
+(UI/UX & Design:) Tj
+0 0 0 rg
+0 -15 Td
+/F1 11 Tf
+(- Responsive Design, Mobile-First Development, Cross-Browser Compatibility) Tj
+0 -15 Td
+(- Modern Animations, Micro-interactions, Performance Optimization) Tj
+
+0 -35 Td
+/F2 18 Tf
+0.1 0.1 0.1 rg
+(PROFESSIONAL EXPERIENCE) Tj
+0 0 0 rg
+0 -5 Td
+50 0 462 1 re f
+0 -25 Td
+/F2 14 Tf
+0.2 0.4 0.8 rg
+(Web Developer | RowthTech) Tj
+0 0 0 rg
+0 -15 Td
+/F3 10 Tf
+0.4 0.4 0.4 rg
+(March 1, 2023 - Present | 1+ Years | Full-time) Tj
+0 0 0 rg
+0 -15 Td
+/F1 11 Tf
+(- Developed and maintained 9+ production-ready web applications using React.js and Next.js) Tj
+0 -12 Td
+(- Built healthcare, e-commerce, fintech, and cybersecurity platforms with modern UI/UX) Tj
+0 -12 Td
+(- Implemented server-side rendering and static site generation improving SEO by 40%) Tj
+0 -12 Td
+(- Collaborated with UI/UX designers to translate Figma designs into pixel-perfect components) Tj
+0 -12 Td
+(- Optimized application performance resulting in 35% faster load times and better UX) Tj
+0 -12 Td
+(- Integrated third-party APIs, payment gateways, and authentication systems) Tj
+0 -12 Td
+(- Implemented modern animations and micro-interactions using Framer Motion) Tj
+
+0 -25 Td
+/F2 14 Tf
+0.2 0.4 0.8 rg
+(Frontend Developer | Freelance) Tj
+0 0 0 rg
+0 -15 Td
+/F3 10 Tf
+0.4 0.4 0.4 rg
+(2022 - 2023 | Contract Position) Tj
+0 0 0 rg
+0 -15 Td
+/F1 11 Tf
+(- Delivered 15+ client projects with 98% satisfaction rate) Tj
+0 -12 Td
+(- Built reusable React components and custom animation libraries) Tj
+0 -12 Td
+(- Implemented responsive designs ensuring cross-browser compatibility) Tj
+0 -12 Td
+(- Specialized in React & Next.js development with modern frontend technologies) Tj
+
+0 -35 Td
+/F2 18 Tf
+0.1 0.1 0.1 rg
+(KEY PROJECTS) Tj
+0 0 0 rg
+0 -5 Td
+50 0 462 1 re f
+0 -20 Td
+/F2 12 Tf
+0.2 0.4 0.8 rg
+(Probill EHR & RCM | React, Node.js, MongoDB, HIPAA Compliance) Tj
+0 0 0 rg
+0 -15 Td
+/F1 11 Tf
+(- Comprehensive Electronic Health Record and Revenue Cycle Management system) Tj
+0 -12 Td
+(- HIPAA-compliant data handling, HL7 FHIR integration, reporting dashboards) Tj
+
+0 -20 Td
+/F2 12 Tf
+0.2 0.4 0.8 rg
+(Platypus Crypto Exchange | React, WebSockets, Blockchain, Web3) Tj
+0 0 0 rg
+0 -15 Td
+/F1 11 Tf
+(- Secure cryptocurrency exchange with real-time trading and wallet management) Tj
+0 -12 Td
+(- Advanced charting tools, blockchain APIs, WebSocket connections for live data) Tj
+
+0 -20 Td
+/F2 12 Tf
+0.2 0.4 0.8 rg
+(Mozimo E-commerce | React, Redux, Stripe, AWS) Tj
+0 0 0 rg
+0 -15 Td
+/F1 11 Tf
+(- Premium e-commerce platform for artisanal chocolate products) Tj
+0 -12 Td
+(- Subscription services, personalized recommendations, payment integration) Tj
+
+0 -20 Td
+/F2 12 Tf
+0.2 0.4 0.8 rg
+(BMG-BUYER Auction | React, WebSockets, Real-time Bidding) Tj
+0 0 0 rg
+0 -15 Td
+/F1 11 Tf
+(- Industrial machinery auction platform with real-time bidding system) Tj
+0 -12 Td
+(- Equipment cataloging, bid management, secure payment processing) Tj
+
+0 -20 Td
+/F2 12 Tf
+0.2 0.4 0.8 rg
+(TaskManager Pro | React, Node.js, WebSockets, Analytics) Tj
+0 0 0 rg
+0 -15 Td
+/F1 11 Tf
+(- Team productivity platform with project management and real-time collaboration) Tj
+0 -12 Td
+(- Task tracking, workflow automation, time tracking, reporting dashboards) Tj
+
+0 -35 Td
+/F2 18 Tf
+0.1 0.1 0.1 rg
+(CERTIFICATIONS & ACHIEVEMENTS) Tj
+0 0 0 rg
+0 -5 Td
+50 0 462 1 re f
+0 -20 Td
+/F1 11 Tf
+(- React Developer Professional Certificate - Meta \(2023\)) Tj
+0 -15 Td
+(- Next.js Fundamentals & Advanced Concepts - Vercel \(2023\)) Tj
+0 -15 Td
+(- JavaScript Algorithms and Data Structures - freeCodeCamp \(2022\)) Tj
+0 -15 Td
+(- Responsive Web Design Certification - freeCodeCamp \(2022\)) Tj
+0 -15 Td
+(- Modern Frontend Development Best Practices \(2023\)) Tj
+
+0 -35 Td
+/F2 18 Tf
+0.1 0.1 0.1 rg
+(EDUCATION) Tj
+0 0 0 rg
+0 -5 Td
+50 0 462 1 re f
+0 -20 Td
+/F2 12 Tf
+0.2 0.4 0.8 rg
+(Bachelor of Science \(B.Sc\) - Complete) Tj
+0 0 0 rg
+0 -15 Td
+/F1 11 Tf
+(University | 2018 - 2022 | CGPA: 8.2/10) Tj
+0 -12 Td
+(Relevant Coursework: Computer Science, Mathematics, Web Development, Programming) Tj
+
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+6 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+endobj
+
+7 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Oblique
+>>
+endobj
+
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000284 00000 n 
+0000004536 00000 n 
+0000004603 00000 n 
+0000000000 65535 f 
+trailer
+<<
+/Size 8
+/Root 1 0 R
+>>
+startxref
+3675
+%%EOF
