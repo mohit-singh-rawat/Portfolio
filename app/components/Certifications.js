@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { Award, ExternalLink, Download, Trophy, Target, Zap, Users, Code, BookOpen, Star, Sparkles } from 'lucide-react'
 import { useState, useEffect } from 'react'
+
 import BlurReveal from './BlurReveal'
 import MagneticButton from './MagneticButton'
 import GradualBlur from './GradualBlur'
@@ -538,13 +539,33 @@ export default function Certifications() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <MagneticButton
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/Mohit_Singh_Rawat_Resume_Updated.pdf';
-                  link.download = 'Mohit_Singh_Rawat_Resume_Updated.pdf';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
+                onClick={async () => {
+                  try {
+                    const response = await fetch('/resume.html');
+                    const htmlContent = await response.text();
+                    
+                    const pdfResponse = await fetch('/api/generate-pdf', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({ html: htmlContent })
+                    });
+                    
+                    if (pdfResponse.ok) {
+                      const blob = await pdfResponse.blob();
+                      const url = window.URL.createObjectURL(blob);
+                      const a = document.createElement('a');
+                      a.href = url;
+                      a.download = 'Mohit_Singh_Rawat_Resume_Updated.pdf';
+                      document.body.appendChild(a);
+                      a.click();
+                      window.URL.revokeObjectURL(url);
+                      document.body.removeChild(a);
+                    }
+                  } catch (error) {
+                    console.error('Error downloading resume:', error);
+                  }
                 }}
                 className="group px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold hover:shadow-2xl transition-all duration-300 flex items-center gap-3 relative overflow-hidden"
               >
