@@ -158,8 +158,8 @@ export default function Testimonials() {
         </BlurReveal>
 
         {/* Featured Testimonial Carousel */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="relative">
+        <div className="max-w-4xl mx-auto mb-12 sm:mb-16">
+          <div className="relative mx-2 sm:mx-0">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -167,7 +167,7 @@ export default function Testimonials() {
                 animate={{ opacity: 1, x: 0, rotateY: 0 }}
                 exit={{ opacity: 0, x: -300, rotateY: -45 }}
                 transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className={`relative p-8 rounded-3xl bg-gradient-to-br ${testimonials[currentIndex].bgGradient} backdrop-blur-sm border border-white/30 dark:border-gray-700/30 shadow-2xl`}
+                className={`relative p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${testimonials[currentIndex].bgGradient} backdrop-blur-sm border border-white/30 dark:border-gray-700/30 shadow-2xl`}
                 onMouseEnter={() => setAutoPlay(false)}
                 onMouseLeave={() => setAutoPlay(true)}
               >
@@ -182,9 +182,9 @@ export default function Testimonials() {
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
-                  className="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg"
+                  className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg"
                 >
-                  <Quote className="w-8 h-8 text-white" />
+                  <Quote className="w-5 h-5 sm:w-8 sm:h-8 text-white" />
                 </motion.div>
 
                 {/* Emoji Badge */}
@@ -198,14 +198,14 @@ export default function Testimonials() {
                     repeat: Infinity,
                     ease: "easeInOut"
                   }}
-                  className="absolute -top-6 left-8 text-4xl bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg"
+                  className="absolute -top-4 sm:-top-6 left-4 sm:left-8 text-2xl sm:text-4xl bg-white dark:bg-gray-800 rounded-full p-2 sm:p-3 shadow-lg"
                 >
                   {testimonials[currentIndex].emoji}
                 </motion.div>
 
-                <div className="pt-8">
+                <div className="pt-6 sm:pt-8">
                   <motion.p 
-                    className="text-xl sm:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed mb-8 italic font-medium"
+                    className="text-base sm:text-xl lg:text-2xl text-gray-800 dark:text-gray-200 leading-relaxed mb-6 sm:mb-8 italic font-medium"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
@@ -213,9 +213,9 @@ export default function Testimonials() {
                     "{testimonials[currentIndex].text}"
                   </motion.p>
 
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
                     <motion.div 
-                      className="flex items-center gap-4"
+                      className="flex items-center gap-3 sm:gap-4"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: 0.5 }}
@@ -223,25 +223,25 @@ export default function Testimonials() {
                       <motion.img
                         src={testimonials[currentIndex].image}
                         alt={testimonials[currentIndex].name}
-                        className="w-16 h-16 rounded-full border-4 border-white shadow-lg"
+                        className="w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 sm:border-4 border-white shadow-lg flex-shrink-0"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ duration: 0.3 }}
                       />
-                      <div>
-                        <h4 className="font-bold text-gray-900 dark:text-white text-lg">
+                      <div className="min-w-0">
+                        <h4 className="font-bold text-gray-900 dark:text-white text-base sm:text-lg">
                           {testimonials[currentIndex].name}
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-400">
+                        <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
                           {testimonials[currentIndex].role}
                         </p>
-                        <p className={`text-sm font-semibold bg-gradient-to-r ${testimonials[currentIndex].color} bg-clip-text text-transparent`}>
+                        <p className={`text-xs sm:text-sm font-semibold bg-gradient-to-r ${testimonials[currentIndex].color} bg-clip-text text-transparent`}>
                           {testimonials[currentIndex].company}
                         </p>
                       </div>
                     </motion.div>
 
                     <motion.div 
-                      className="flex gap-1"
+                      className="flex gap-1 self-start sm:self-auto"
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.6, delay: 0.7 }}
@@ -254,7 +254,7 @@ export default function Testimonials() {
                           transition={{ duration: 0.3, delay: 0.8 + i * 0.1 }}
                           whileHover={{ scale: 1.3, rotate: 180 }}
                         >
-                          <Star className="w-6 h-6 fill-yellow-400 text-yellow-400" />
+                          <Star className="w-5 h-5 sm:w-6 sm:h-6 fill-yellow-400 text-yellow-400" />
                         </motion.div>
                       ))}
                     </motion.div>
@@ -266,31 +266,31 @@ export default function Testimonials() {
             {/* Navigation Buttons */}
             <motion.button
               onClick={prevTestimonial}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center hover:bg-white dark:hover:bg-gray-800 transition-all duration-300"
+              className="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 z-10"
               whileHover={{ scale: 1.1, x: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <ChevronLeft className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+              <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300" />
             </motion.button>
             <motion.button
               onClick={nextTestimonial}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center hover:bg-white dark:hover:bg-gray-800 transition-all duration-300"
+              className="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 z-10"
               whileHover={{ scale: 1.1, x: 2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <ChevronRight className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+              <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700 dark:text-gray-300" />
             </motion.button>
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-3 mt-8">
+          <div className="flex justify-center gap-2 sm:gap-3 mt-6 sm:mt-8">
             {testimonials.map((_, index) => (
               <motion.button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 w-8'
+                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 w-6 sm:w-8'
                     : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
                 }`}
                 whileHover={{ scale: 1.2 }}
@@ -302,7 +302,7 @@ export default function Testimonials() {
 
         {/* All Testimonials Grid */}
         <motion.div 
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -314,7 +314,7 @@ export default function Testimonials() {
               variants={cardVariants}
               onHoverStart={() => setHoveredCard(testimonial.id)}
               onHoverEnd={() => setHoveredCard(null)}
-              className={`relative overflow-hidden rounded-2xl bg-gradient-to-br ${testimonial.bgGradient} backdrop-blur-sm border border-white/20 dark:border-gray-700/30 p-6 cursor-pointer group`}
+              className={`relative overflow-hidden rounded-xl sm:rounded-2xl bg-gradient-to-br ${testimonial.bgGradient} backdrop-blur-sm border border-white/20 dark:border-gray-700/30 p-4 sm:p-6 cursor-pointer group`}
               style={{
                 transformStyle: 'preserve-3d',
                 perspective: '1000px'
@@ -352,25 +352,25 @@ export default function Testimonials() {
               </motion.div>
 
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
                   <motion.img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-12 h-12 rounded-full border-2 border-white shadow-md"
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-white shadow-md flex-shrink-0"
                     whileHover={{ scale: 1.1, rotate: 10 }}
                     transition={{ duration: 0.3 }}
                   />
-                  <div>
-                    <h4 className="font-bold text-gray-900 dark:text-white text-sm">
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-gray-900 dark:text-white text-xs sm:text-sm truncate">
                       {testimonial.name}
                     </h4>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">
+                    <p className="text-xs text-gray-600 dark:text-gray-400 truncate">
                       {testimonial.role}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-1 mb-3">
+                <div className="flex gap-0.5 sm:gap-1 mb-2 sm:mb-3">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <motion.div
                       key={i}
@@ -379,28 +379,28 @@ export default function Testimonials() {
                       transition={{ duration: 0.2, delay: i * 0.1 }}
                       whileHover={{ scale: 1.2, rotate: 180 }}
                     >
-                      <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-yellow-400 text-yellow-400" />
                     </motion.div>
                   ))}
                 </div>
 
                 <motion.p 
-                  className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed line-clamp-4"
+                  className="text-gray-700 dark:text-gray-300 text-xs sm:text-sm leading-relaxed line-clamp-3 sm:line-clamp-4"
                   animate={{ opacity: hoveredCard === testimonial.id ? 1 : 0.8 }}
                   transition={{ duration: 0.3 }}
                 >
-                  "{testimonial.text.substring(0, 120)}..."
+                  "{testimonial.text.substring(0, 100)}..."
                 </motion.p>
 
                 <motion.div
-                  className="mt-4 flex items-center justify-between"
+                  className="mt-3 sm:mt-4 flex items-center justify-between"
                   animate={{ y: hoveredCard === testimonial.id ? 0 : 10, opacity: hoveredCard === testimonial.id ? 1 : 0.7 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <span className={`text-xs font-semibold bg-gradient-to-r ${testimonial.color} bg-clip-text text-transparent`}>
+                  <span className={`text-xs font-semibold bg-gradient-to-r ${testimonial.color} bg-clip-text text-transparent truncate`}>
                     {testimonial.highlight}
                   </span>
-                  <ThumbsUp className="w-4 h-4 text-green-500" />
+                  <ThumbsUp className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 flex-shrink-0" />
                 </motion.div>
               </div>
             </motion.div>
