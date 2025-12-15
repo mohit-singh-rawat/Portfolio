@@ -1,16 +1,31 @@
-import puppeteer from 'puppeteer-core';
-import chromium from '@sparticuz/chromium';
-
 export async function POST(request) {
   try {
     const { html } = await request.json();
     
-    const browser = await puppeteer.launch({
-      args: chromium.args,
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath(),
-      headless: chromium.headless,
-    });
+    // Check if we're in production (Vercel) or local development
+    const isProduction = process.env.NODE_ENV === 'production';
+    
+    let browser;
+    if (isProduction) {
+      // Use puppeteer-core with chromium for production
+      const puppeteer = (await import('puppeteer-core')).default;
+      const chromium = (await import('@sparticuz/chromium')).default;
+      
+      browser = await puppeteer.launch({
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath(),
+        headless: chromium.headless,
+      });
+    } else {
+      // Use regular puppeteer for local development
+      const puppeteer = (await import('puppeteer')).default;
+      
+      browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+      });
+    }
     
     const page = await browser.newPage();
     await page.setContent(html, { waitUntil: 'networkidle0' });
