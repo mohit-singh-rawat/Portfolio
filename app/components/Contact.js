@@ -94,22 +94,22 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-gray-900 dark:text-white">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 lg:mb-8 text-gray-900 dark:text-white">
               Let's Connect
             </h3>
-            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 lg:mb-8 leading-relaxed">
               I'm always interested in new opportunities and exciting projects. 
               Whether you have a question or just want to say hi, feel free to reach out!
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-3 sm:space-y-4 lg:space-y-6">
               {contactInfo.map((info, index) => (
                 <motion.a
                   key={index}
@@ -118,14 +118,14 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-4 p-4 bg-white dark:bg-dark-100 rounded-lg hover:shadow-lg transition-shadow duration-300 group"
+                  className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white dark:bg-dark-100 rounded-lg hover:shadow-lg transition-shadow duration-300 group"
                 >
-                  <div className="p-3 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="p-2 sm:p-3 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     {info.icon}
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 dark:text-white">{info.title}</h4>
-                    <p className="text-gray-600 dark:text-gray-300">{info.value}</p>
+                  <div className="min-w-0">
+                    <h4 className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">{info.title}</h4>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base break-all">{info.value}</p>
                   </div>
                 </motion.a>
               ))}
@@ -151,7 +151,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-dark-200 text-gray-900 dark:text-white transition-colors"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-dark-200 text-gray-900 dark:text-white transition-colors text-sm sm:text-base"
                   placeholder="Your full name"
                 />
               </div>
@@ -167,7 +167,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-dark-200 text-gray-900 dark:text-white transition-colors"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-dark-200 text-gray-900 dark:text-white transition-colors text-sm sm:text-base"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -182,8 +182,8 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-dark-200 text-gray-900 dark:text-white transition-colors resize-none"
+                  rows={4}
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-dark-200 text-gray-900 dark:text-white transition-colors resize-none text-sm sm:text-base"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -191,13 +191,13 @@ export default function Contact() {
               <MagneticButton
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
               >
                 {isSubmitting ? (
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                 ) : (
                   <>
-                    <Send size={20} />
+                    <Send size={16} className="sm:w-5 sm:h-5" />
                     Send Message
                   </>
                 )}

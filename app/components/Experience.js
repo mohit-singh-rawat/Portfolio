@@ -133,14 +133,14 @@ export default function Experience() {
               variants={cardVariants}
               onHoverStart={() => setHoveredCard(exp.id)}
               onHoverEnd={() => setHoveredCard(null)}
-              className="relative mb-12 last:mb-0"
+              className="relative mb-8 sm:mb-12 last:mb-0"
             >
-              {/* Timeline Line */}
-              <div className="absolute left-8 top-20 bottom-0 w-0.5 bg-gradient-to-b from-gray-300 to-transparent dark:from-gray-600 dark:to-transparent" />
+              {/* Timeline Line - Hidden on mobile */}
+              <div className="hidden sm:block absolute left-8 top-20 bottom-0 w-0.5 bg-gradient-to-b from-gray-300 to-transparent dark:from-gray-600 dark:to-transparent" />
               
-              {/* Timeline Dot */}
+              {/* Timeline Dot - Hidden on mobile */}
               <motion.div 
-                className={`absolute left-6 top-16 w-5 h-5 rounded-full bg-gradient-to-r ${exp.color} shadow-lg z-10`}
+                className={`hidden sm:block absolute left-6 top-16 w-5 h-5 rounded-full bg-gradient-to-r ${exp.color} shadow-lg z-10`}
                 animate={{
                   scale: hoveredCard === exp.id ? 1.3 : 1,
                   boxShadow: hoveredCard === exp.id ? '0 0 20px rgba(59, 130, 246, 0.5)' : '0 0 0px rgba(59, 130, 246, 0)'
@@ -150,7 +150,7 @@ export default function Experience() {
 
               {/* Experience Card */}
               <motion.div
-                className={`ml-16 relative overflow-hidden rounded-2xl bg-gradient-to-br ${exp.bgColor} backdrop-blur-sm border border-white/20 dark:border-gray-700/30`}
+                className={`sm:ml-16 relative overflow-hidden rounded-2xl bg-gradient-to-br ${exp.bgColor} backdrop-blur-sm border border-white/20 dark:border-gray-700/30`}
                 animate={{
                   y: hoveredCard === exp.id ? -5 : 0,
                   scale: hoveredCard === exp.id ? 1.02 : 1
@@ -169,37 +169,37 @@ export default function Experience() {
                   transition={{ duration: 0.3 }}
                 />
 
-                <div className="relative p-8">
+                <div className="relative p-4 sm:p-6 lg:p-8">
                   {/* Header */}
-                  <div className="flex flex-wrap items-start justify-between mb-6 gap-4">
+                  <div className="flex flex-wrap items-start justify-between mb-4 sm:mb-6 gap-2 sm:gap-4">
                     <div className="flex-1">
                       <motion.h3 
-                        className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2"
+                        className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-2"
                         animate={{ color: hoveredCard === exp.id ? '#3b82f6' : undefined }}
                         transition={{ duration: 0.3 }}
                       >
                         {exp.title}
                       </motion.h3>
-                      <div className="flex items-center gap-3 text-lg font-semibold mb-2">
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-base sm:text-lg font-semibold mb-2">
                         <motion.div
                           animate={{ rotate: hoveredCard === exp.id ? 360 : 0 }}
                           transition={{ duration: 0.6 }}
                         >
-                          <Briefcase className={`w-5 h-5 text-blue-600 dark:text-blue-400`} />
+                          <Briefcase className={`w-4 h-4 sm:w-5 sm:h-5 text-blue-600 dark:text-blue-400`} />
                         </motion.div>
                         <span className={`bg-gradient-to-r ${exp.color} bg-clip-text text-transparent`}>{exp.company}</span>
-                        <span className="px-3 py-1 bg-white/50 dark:bg-gray-800/50 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300">
+                        <span className="px-2 sm:px-3 py-1 bg-white/50 dark:bg-gray-800/50 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300">
                           {exp.type}
                         </span>
                       </div>
-                      <div className="flex items-center gap-4 text-gray-600 dark:text-gray-400">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4" />
-                          <span className="text-sm font-medium">{exp.period}</span>
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-gray-600 dark:text-gray-400">
+                        <div className="flex items-center gap-1 sm:gap-2">
+                          <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                          <span className="text-xs sm:text-sm font-medium">{exp.period}</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4" />
-                          <span className="text-sm font-medium">{exp.location}</span>
+                        <div className="flex items-center gap-1 sm:gap-2">
+                          <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
+                          <span className="text-xs sm:text-sm font-medium">{exp.location}</span>
                         </div>
                       </div>
                     </div>
@@ -207,7 +207,7 @@ export default function Experience() {
 
                   {/* Description */}
                   <motion.p 
-                    className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-lg"
+                    className="text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base lg:text-lg"
                     animate={{ opacity: hoveredCard === exp.id ? 1 : 0.8 }}
                     transition={{ duration: 0.3 }}
                   >
@@ -215,9 +215,9 @@ export default function Experience() {
                   </motion.p>
 
                   {/* Achievements */}
-                  <div className="space-y-4">
-                    <h4 className="font-bold text-gray-900 dark:text-white text-lg mb-4">Key Achievements:</h4>
-                    <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-3 sm:space-y-4">
+                    <h4 className="font-bold text-gray-900 dark:text-white text-base sm:text-lg mb-3 sm:mb-4">Key Achievements:</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                       {exp.achievements.map((achievement, idx) => {
                         const IconComponent = achievement.icon
                         return (
@@ -226,22 +226,22 @@ export default function Experience() {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.5, delay: idx * 0.1 }}
-                            className="flex items-center gap-3 p-3 bg-white/60 dark:bg-gray-800/60 rounded-lg backdrop-blur-sm hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all duration-300 group"
+                            className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-white/60 dark:bg-gray-800/60 rounded-lg backdrop-blur-sm hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all duration-300 group"
                           >
                             <motion.div
-                              className={`p-2 rounded-lg bg-gradient-to-r ${exp.color} text-white`}
+                              className={`p-1.5 sm:p-2 rounded-lg bg-gradient-to-r ${exp.color} text-white flex-shrink-0`}
                               whileHover={{ scale: 1.1, rotate: 5 }}
                               transition={{ duration: 0.2 }}
                             >
-                              <IconComponent className="w-4 h-4" />
+                              <IconComponent className="w-3 h-3 sm:w-4 sm:h-4" />
                             </motion.div>
-                            <div className="flex-1">
-                              <span className="text-sm text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                            <div className="flex-1 min-w-0">
+                              <span className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors leading-tight">
                                 {achievement.text}
                               </span>
                             </div>
                             <motion.span 
-                              className={`font-bold text-lg bg-gradient-to-r ${exp.color} bg-clip-text text-transparent`}
+                              className={`font-bold text-sm sm:text-lg bg-gradient-to-r ${exp.color} bg-clip-text text-transparent flex-shrink-0`}
                               animate={{ scale: hoveredCard === exp.id ? 1.1 : 1 }}
                               transition={{ duration: 0.3 }}
                             >
