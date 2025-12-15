@@ -13,7 +13,8 @@
     "framer-motion": "^12.23.26",
     "lucide-react": "^0.560.0",
     "next": "^14.0.0",
-    "puppeteer": "^21.5.2",
+    "nodemailer": "^6.9.8",
+    "puppeteer": "^24.15.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
@@ -25,5 +26,8 @@
     "postcss": "^8.0.0",
     "tailwindcss": "^3.0.0",
     "typescript": "^5.0.0"
+  },
+  "overrides": {
+    "puppeteer": "^24.15.0"
   }
 }
